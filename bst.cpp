@@ -9,6 +9,7 @@ BinarySearchTree::BinarySearchTree(){
 
 }
 bool passedRoot = false;
+//Insert Node into BinarySearchTree Object
 void BinarySearchTree::insert(const int &key, BinaryNode * & t) {
     if(t == nullptr) {
         t = new BinaryNode;
@@ -21,7 +22,7 @@ void BinarySearchTree::insert(const int &key, BinaryNode * & t) {
         insert(key, t->right);
     }
 }
-
+//Traversal Algorithm: LevelOrder
 void BinarySearchTree::levelorder(BinaryNode* t) {
     BinaryNode *root_copy = t;
     queue<BinaryNode*> node_queue;
@@ -44,6 +45,7 @@ void BinarySearchTree::levelorder(BinaryNode* t) {
 
     }
 }
+//Clear entire tree
 void BinarySearchTree::makeEmpty(BinaryNode * &t) {
     while(t == nullptr) {
         makeEmpty(t->left);
